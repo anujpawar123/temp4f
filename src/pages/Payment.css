@@ -1,0 +1,203 @@
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: #f6f6f6;
+  min-height: 100dvh;
+}
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: white; 
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.back-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.payment-header .header-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.payment-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Amount Section */
+.amount-display-section {
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.amount-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #777;
+}
+
+.amount-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #333;
+  margin-top: 0;
+}
+
+.cashback-offer-banner {
+  margin-top: 0.5rem;
+  display: inline-block;
+  background: #fffae6;
+  color: #d98a00;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #ffcc66;
+}
+
+/* QR Section */
+.qr-section {
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.qr-image-wrapper {
+  width: 100%;
+  max-width: 170px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
+}
+
+.qr-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.timer-display {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #da2c2c;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.instructions-list {
+  background: #f9f9f9;
+  padding: 0.75rem;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.instructions-list p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.3;
+}
+
+.instructions-list p:last-child {
+  margin: 0;
+}
+
+/* UTR Section */
+.utr-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.utr-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.utr-input-wrapper {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.utr-input {
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.utr-input::placeholder {
+  color: #bbb;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+
+.utr-warning {
+  color: #ff4c4c;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.utr-submit-btn {
+  background: #ccc;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.utr-submit-btn.ready {
+  background: linear-gradient(135deg, #f74545 0%, #da2c2c 100%);
+  box-shadow: 0 6px 15px rgba(218, 44, 44, 0.25);
+}
+
+.utr-submit-btn.ready:active {
+  transform: scale(0.96);
+}

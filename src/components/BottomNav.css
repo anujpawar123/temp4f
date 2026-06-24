@@ -1,0 +1,296 @@
+.bottom-nav-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: inherit; /* Inherit the max-width of 420px from app-container on desktop */
+  margin: 0 auto; /* Center it if there's a max-width */
+  background: linear-gradient(180deg, #fff7f6 0%, #ffefed 100%);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0 1.25rem 0;
+}
+
+@media (min-width: 768px) {
+  .bottom-nav-container {
+    position: absolute; /* Revert to absolute for the desktop 90vh window layout */
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+}
+
+.nav-items {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #7a7a7a;
+  cursor: pointer;
+  transition: color 0.2s;
+  gap: 4px;
+}
+
+.nav-item.active {
+  color: #da2c2c;
+}
+
+.nav-item.fab-spacer {
+  flex: 1.2; /* slightly wider space for the big FAB */
+  pointer-events: none;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-item span {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Floating Action Button */
+.fab-container {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f05045 0%, #d32020 100%);
+  border: 4px solid #fff5f3; /* creates the cutout effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(218, 44, 44, 0.4);
+  z-index: 2;
+  transition: transform 0.2s;
+  gap: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fab-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  animation: shine-sweep 3s infinite linear;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes shine-sweep {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  20% { transform: translateX(100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+.fab-icon {
+  width: 36px;
+  height: 36px;
+  animation: pulse-crown 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-crown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.fab-text {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.fab-glow {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(218,44,44,0.3) 0%, rgba(255,255,255,0) 70%);
+  top: -4px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Balance Modal Styles */
+.balance-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.balance-modal-content {
+  background: white;
+  width: 90%;
+  max-width: 320px;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.balance-modal-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffefed;
+  color: #da2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.balance-modal-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.balance-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.balance-modal-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.4;
+}
+
+.balance-modal-actions {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.balance-btn-cancel {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  background: #f1f1f1;
+  color: #555;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.balance-btn-cancel:active {
+  background: #e1e1e1;
+}
+
+.balance-btn-add {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #f74545 0%, #da2c2c 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(218, 44, 44, 0.3);
+  transition: transform 0.2s;
+}
+
+.balance-btn-add:active {
+  transform: scale(0.96);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner Styles */
+.loading-spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  .balance-modal-overlay,
+  .loading-overlay {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: 90vh !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 36px !important;
+    bottom: auto !important;
+    right: auto !important;
+  }
+}

@@ -1,0 +1,270 @@
+.account-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: var(--bg-color);
+  padding-bottom: 2rem;
+}
+
+/* Header */
+.account-header {
+  background: linear-gradient(180deg, #ff4c4c 0%, #fa3333 100%);
+  padding: 1.5rem 1.5rem 5rem 1.5rem;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.back-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-spacer {
+  width: 24px; /* to balance the flex space with the back arrow */
+}
+
+/* Profile */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.avatar-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background-color: #f0f0f0; /* placeholder bg */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-number {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Edit Name */
+.name-display-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.name-edit-icon {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.name-edit-icon:active {
+  opacity: 0.5;
+}
+
+.name-edit-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.name-edit-input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 160px;
+  font-family: inherit;
+  outline: none;
+}
+
+.name-edit-input:focus {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: white;
+}
+
+.name-save-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 6px;
+  transition: transform 0.1s;
+}
+
+.name-save-btn:active {
+  transform: scale(0.95);
+}
+
+.name-save-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Balance Card */
+.balance-card-container {
+  padding: 0 1.5rem;
+  margin-top: -3rem; /* overlap the red header */
+  position: relative;
+  z-index: 10;
+}
+
+.balance-card {
+  background-color: #fffaf5;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.balance-icon {
+  font-size: 2.5rem;
+  background-color: transparent;
+}
+
+.balance-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.balance-amount {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+/* Menu List */
+.menu-list {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  background-color: #fffaf5;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:active {
+  transform: scale(0.98);
+}
+
+.menu-icon {
+  color: #f17c38; /* Orange color for icons */
+  width: 24px;
+  height: 24px;
+  margin-right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.menu-chevron {
+  width: 20px;
+  height: 20px;
+  color: #ccc;
+}
+
+/* Logout Button */
+.logout-container {
+  padding: 1.5rem;
+  margin-top: auto;
+  margin-bottom: 10vh; /* Push the button upwards above the bottom nav */
+}
+
+.btn-logout {
+  width: 100%;
+  background-color: var(--red-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(226, 49, 49, 0.2);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-logout:hover {
+  background-color: var(--red-hover);
+}
+
+.btn-logout:active {
+  transform: scale(0.98);
+}

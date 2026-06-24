@@ -1,0 +1,534 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #fff3f0 0%, #f6f6f6 100%);
+}
+
+/* Navbar */
+.home-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1rem;
+}
+
+/* Logo Section */
+.home-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-crown {
+  width: 55px;
+  height: auto;
+  object-fit: contain;
+  /* Add subtle shadow if needed, but original looks flat/3D */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+}
+
+.home-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.logo-text-king {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #311409;
+  letter-spacing: -0.5px;
+}
+
+.logo-text-thimbles {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #311409;
+  letter-spacing: -0.5px;
+}
+
+/* Wallet Button Pill */
+.home-wallet-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #ffede8;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s;
+}
+
+.home-wallet-button:active {
+  transform: scale(0.96);
+}
+
+.wallet-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.wallet-balance-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.wallet-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #311409;
+}
+
+.wallet-amount {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #311409;
+  letter-spacing: -0.5px;
+}
+
+/* Add Button (+) */
+.wallet-add-btn {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(180deg, #f74545 0%, #da2c2c 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(218, 44, 44, 0.3);
+  flex-shrink: 0;
+}
+
+.wallet-add-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Content Area */
+.home-content {
+  flex: 1;
+  padding: 0 1rem 1rem 1rem; /* Removed huge bottom padding since spacer handles nav */
+}
+
+.banner-container {
+  width: 100%;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.banner-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  animation: shine-sweep 3s infinite linear;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.responsive-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: block;
+  animation: pulse-banner 4s infinite ease-in-out;
+}
+
+@keyframes pulse-banner {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff9f7;
+  border: 1px solid #ffd7cc;
+  border-radius: 16px;
+  padding: 0.65rem 0.75rem;
+  margin-top: 0.75rem;
+  gap: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.announcement-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.announcement-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.announcement-text-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.announcement-text {
+  font-size: 0.85rem;
+  color: #111;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+}
+
+.announcement-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #111;
+}
+
+.announcement-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* How to Play Section */
+.how-to-play-container {
+  background-color: #fff9f7;
+  border: 1px solid #ffd7cc;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.htp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.htp-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.htp-book-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.htp-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #311409;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.htp-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rtp-badge {
+  background: #da2c2c;
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Steps wrapper */
+.htp-steps-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #ffe8e2;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.htp-steps-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.htp-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 85px; /* Ensures they slide naturally on mobile */
+  flex: 1;
+}
+
+.step-image {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.step-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.2;
+}
+
+.step-divider {
+  width: 1px;
+  background-color: transparent;
+  border-right: 1px dashed #ffc6b8;
+  margin: 0 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Recent Big Wins Section */
+.recent-wins-container {
+  background-color: #fffcfb;
+  border: 1px solid #ffe8e2;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.rw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rw-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rw-crown-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.rw-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.rw-view-all {
+  color: #e60000;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rw-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.rw-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #ffe8e2;
+}
+
+.rw-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.rw-item:first-child {
+  padding-top: 0;
+}
+
+.rw-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rw-avatar-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eee;
+  border: 1px solid #ffe8e2;
+}
+
+.rw-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rw-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.rw-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.rw-time {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.rw-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.2px;
+}
+
+/* Stats Section */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff9f7;
+  border: 1px solid #ffe8e2;
+  border-radius: 16px;
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.stats-container::-webkit-scrollbar {
+  display: none;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0.65rem;
+  justify-content: center;
+  min-width: max-content;
+  padding: 0 0.5rem;
+}
+
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.stat-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #311409;
+  letter-spacing: -0.2px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 35px;
+  background-color: #ffe8e2;
+  flex-shrink: 0;
+}
+
+/* Responsive / Mobile First Adjustments */
+@media (max-width: 380px) {
+  .home-navbar {
+    padding: 1rem 0.5rem;
+  }
+  
+  .home-crown {
+    width: 45px;
+  }
+  
+  .logo-text-king,
+  .logo-text-thimbles {
+    font-size: 1.15rem;
+  }
+  
+  .home-wallet-button {
+    padding: 0.35rem 0.35rem 0.35rem 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .wallet-label {
+    font-size: 0.65rem;
+  }
+  
+  .wallet-amount {
+    font-size: 1.15rem;
+  }
+  
+  .wallet-icon-container svg {
+    width: 26px;
+    height: 22px;
+  }
+  
+  .wallet-add-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .wallet-add-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
